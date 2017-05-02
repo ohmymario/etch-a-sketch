@@ -1,0 +1,34 @@
+body {
+	background-color: #c90a0a;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+}
+
+h1 {
+	text-align: center;
+	font-family: 'Love Ya Like A Sister', cursive;
+	font-size: 5em;
+	margin: 10px;
+}
+
+
+.container {
+	background-color: #e3e3e3;
+	margin: 0 auto;
+	width: 500px;
+	height: 500px;
+	border: rgba(0, 0, 0, 0.70) 10px solid;
+	border-radius: 20px;
+}
+
+
+
+.sketch {
+	float: left;
+}
+
+.sketch , .row {
+	background-color: aliceblue;
+	display: inline-block;
+}
