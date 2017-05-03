@@ -29,6 +29,12 @@ h1 {
 }
 
 .sketch , .row {
-	background-color: aliceblue;
+	background-color: rgb(193, 190, 177);
+	-webkit-box-shadow: 0 0 0 1px black;
+	box-shadow: 0 0 0 1px black; /*creates grid without interfering with box sizing*/
 	display: inline-block;
+}
+
+.sketch-active{
+	background-color: #303832;
 }
