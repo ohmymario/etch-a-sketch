@@ -1,26 +1,39 @@
 $(document).ready(function () {
 
-
 	/*@desc amount of squares horizontally + vertically 
 	then uses a loop to add them into the container*/
-	var g_size = 16;
-	var darkColor = true;
+	
+	var $paintColor = "";
+	
+	var defaultColor = "#303832"
+	var greys = true;
 	var rgb = null;
 
-	for (i = 0; i < g_size * g_size; i++) {
-		var $row = $("<div class=sketch></div>");
-		$(".container").append($row);
-	}
+	
+	
+	
+	var createGrid = function (g_size) {
 
-	//@desc obtains the correct sizing for the squares being added in. 
-	var calc = 500 / g_size;
+		for (i = 0; i < g_size * g_size; i++) {
+			var $row = $("<div class=sketch></div>");
+			$(".container").append($row);
+		}
 
-	$(".sketch").css({
-		"width": calc + "px"
-	});
-	$(".sketch").css({
-		'height': calc + "px"
-	});
+		//@desc obtains the correct sizing for the squares being added in. 
+		var calc = 650 / g_size;
+
+		$(".sketch").css({
+			"width": calc + "px"
+		});
+		$(".sketch").css({
+			'height': calc + "px"
+		});
+		
+		
+	};
+	
+	createGrid(16);
+
 	
 	
 	var rainbowColorPicker = function () {
@@ -30,52 +43,90 @@ $(document).ready(function () {
 		rgb = "rgb(" + r + "," + g + "," + b + ")"
 		return rgb;
 	}
+	
+	var greyscaleColor = function() {
+  var randomNumber = Math.floor(Math.random()*9+1)
+  greys = "rgba(0,0,0,0." + randomNumber + ")";
+}
+	
+	var clear = function() {
+  $(".sketch").css("background-color", "rgb(193, 190, 177)" );
+}
 
-	// @desc gives #303832 color when mouse touches div with a class of sketch
-	var colorDark = function () {
-			$(".sketch").on('mouseenter', function () {
-				$(this).addClass("sketch-active");
-			});
-		}
 
-	var rainbowColor = function () {
-			$(".sketch").on('mouseenter', function () {
-				$(this).css('background-color', rainbowColorPicker());
-			});
-		}
 
 
 		
 /*=======buttons====== */
-			
-			
-		$(".rainbow").on('click', function () {
-			darkColor = false;
-			rainbowColor();
-			colorManage();
-		});
+			$(".rainbow").on('click', function () {
+				
 
-		// @desc this removes any colored blocks
-		$(".remove").on('click', function () {
-			$("div").removeClass("sketch-active");
-		});
+				$(".rainbow").addClass("bttn-on");
+
+				$(".remove").removeClass("bttn-on");
+				$(".reset").removeClass("bttn-on");
+				$(".greyscale").removeClass("bttn-on");
+				
+
+			});
+
+			// @desc this removes any colored blocks
+			$(".remove").on('click', function () {
+				clear();
+			});
+
+			$(".reset").on('click', function () {
+				
+
+				$(".reset").addClass("bttn-on");
+				
+				$(".greyscale").removeClass("bttn-on");
+				$(".remove").removeClass("bttn-on");
+				$(".rainbow").removeClass("bttn-on");
+
+			});
+
+
+			$(".greyscale").on('click', function () {
+				
+				$(".greyscale").addClass("bttn-on");
+				
+				$(".rainbow").removeClass("bttn-on");
+				$(".remove").removeClass("bttn-on");
+				$(".reset").removeClass("bttn-on");
+
+			});
 	
-		$(".reset").on('click', function(){
-			darkColor = true;
-			rgb = null;
-			colorManage();
-		});
 	
-	
+		
 
 
-	var colorManage = function () {
 
-		if (rgb !== null && darkColor == false) {
-			rainbowColor();
-		} else {
-			colorDark();
+var colorManage = function () {
+	$(".sketch").mouseenter(function () {
+		if ($(".reset").hasClass("bttn-on")) {
+			$paintColor = defaultColor;
+
+		} else if ($(".rainbow").hasClass("bttn-on")) {
+			rainbowColorPicker();
+			$paintColor = rgb;
+
+		} else if ($(".greyscale").hasClass("bttn-on")) {
+			greyscaleColor();
+			$paintColor = greys;
 		}
-	}
-	colorManage();
+
+		$(this).css("background-color", $paintColor);
+	});
+}
+colorManage();
 });
+
+
+
+
+
+
+
+
+

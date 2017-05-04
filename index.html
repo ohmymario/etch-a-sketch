@@ -14,18 +14,33 @@
 	<h1>Etch A Sketch</h1>
 	<div class="container">
 	</div>
-
 	<div class="configure">
-		<button class="remove">Clear Board</button>
-		<button class="boxAmount">Change grid density</button>
+		<button class="reset bttn-on">Default</button>
 		<button class="rainbow">Rainbow</button>
-		<button class="reset">Reset</button>
+		<button class="greyscale">GreyScale</button>
+		<button class="remove">Clear Board</button>
 	</div>
 
-
+		<div>
+		<p>Grid Density</p>
+			<select>
+                <option value="4">4</option>
+                <option value="8">8</option>
+                <option value="16" selected>16</option>
+                <option value="32" >32</option>
+                <option value="64">64</option>
+                <option value="128">128</option>
+              </select>
+		</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="scripts/sketch.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+

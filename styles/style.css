@@ -1,5 +1,5 @@
 body {
-	background-color: #e54444;
+	background-color: rgba(255, 76, 76, 0.87);
 	margin: 0 auto;
 	width: 100%;
 	height: 1vh;
@@ -12,23 +12,33 @@ h1 {
 	margin: 10px;
 }
 
+
+
 button {
 	font-size: 100%;
 	padding: .5em 1em;
-	color: #444;
+	color: white;
 	color: rgba(0, 0, 0, .8);
-	border: 1px solid #999;
-	border: transparent;
+	border: 2px solid #999;
 	background-color: #E6E6E6;
 	text-decoration: none;
 	border-radius: 2px;
 }
 
+
+
+.bttn-on {
+  background: #b7b7b7;
+  border: 2px solid rgba(0,0,0,0.2);
+	transition: all 400ms ease-in-out;
+
+}
+
 .container {
-	background-color: #e3e3e3;
+	background-color: #eaeaea;
 	margin: 0 auto;
-	width: 500px;
-	height: 500px;
+	width: 650px;
+	height: 650px;
 	border: rgba(0, 0, 0, 0.70) 10px solid;
 	border-radius: 20px;
 }
@@ -39,7 +49,7 @@ button {
 
 .sketch,
 .row {
-	background-color: rgb(193, 190, 177);
+	background-color: rgb(234, 234, 234);
 	-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 	/*creates grid without interfering with box sizing*/
@@ -54,9 +64,11 @@ button {
 	text-align: center;
 	margin: 0 auto;
 	margin-top: 20px;
-	width: 500px;
+	width: 650px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
+
+
 
 
