@@ -12,8 +12,6 @@ h1 {
 	margin: 10px;
 }
 
-
-
 button {
 	font-size: 100%;
 	padding: .5em 1em;
@@ -24,8 +22,6 @@ button {
 	text-decoration: none;
 	border-radius: 2px;
 }
-
-
 
 .bttn-on {
   background: #b7b7b7;
@@ -54,10 +50,6 @@ button {
 	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
 	/*creates grid without interfering with box sizing*/
 	display: inline-block;
-}
-
-.sketch-active {
-	background-color: #303832;
 }
 
 .configure {
